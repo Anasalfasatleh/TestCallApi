@@ -93,6 +93,13 @@ namespace TestCallApi.Controllers
             return BadRequest();
         }
 
+        [HttpGet("TestHeaders")]
+        public async Task<IActionResult> TestHeaders([FromHeader]string? key1, [FromHeader] string? key2)
+        {
+            Console.WriteLine("TestHeaders => " + "key1 => "+ key1 +", key2 => " + key2);
+            return Ok();
+        }
+
     }
     public class TestBody
     {
